@@ -19,6 +19,7 @@ module.exports = {
 		alias: {
 			config: path.resolve(__dirname, "./src/config"),
 			components: path.resolve(__dirname, "./src/components"),
+			assets: path.resolve(__dirname, "./src/assets"),
 		},
 	},
 	plugins: [
@@ -39,6 +40,10 @@ module.exports = {
 				use: {
 					loader: "babel-loader",
 				},
+			},
+			{
+				test: /\.svg$/,
+				use: ["@svgr/webpack"],
 			},
 		],
 	},
